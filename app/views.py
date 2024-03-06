@@ -88,6 +88,13 @@ def login():
     return render_template("login.html", form=form)
 
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    flash("Successfully logged out", "success")
+    return redirect(url_for("home"))
+
+
 @app.route("/uploads/<filename>")
 def get_image(filename):
     return send_from_directory(
