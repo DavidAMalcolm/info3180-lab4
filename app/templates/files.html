@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="photograph">
+  {% for file in images  %}
+    <img class="pictures" src="{{url_for('get_image',filename=file)}}" />
+  {% endfor %}
+</div>
+{% endblock %}
+
